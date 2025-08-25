@@ -1,0 +1,70 @@
+package com.sutherland.library.controller;
+
+
+	import org.springframework.beans.factory.annotation.Autowired;
+	import org.springframework.http.HttpStatus;
+	import org.springframework.http.ResponseEntity;
+	import org.springframework.web.bind.annotation.*;
+
+	import com.sutherland.library.entity.Login;
+	import com.sutherland.library.service.LoginService;
+
+	@RestController
+	@RequestMapping("/login")
+	@CrossOrigin(origins = "http://localhost:3000")
+	public class LoginController {
+
+	    @Autowired
+	    private LoginService loginService;
+
+	    // Add a new login user
+	    @PostMapping
+	    public ResponseEntity<String> addLogin(@RequestBody Login login) {
+	        loginService.addLogin(login);
+	        return new ResponseEntity<>("Login user added", HttpStatus.OK);
+	    }
+
+	    // Validate login credentials
+	    @PostMapping("/validate")
+	    public ResponseEntity<String> validateLogin(@RequestBody Login login) {
+	        boolean isValid = loginService.validateLogin(login.getUsername(), login.getPassword());
+	        if (isValid) {
+	            return new ResponseEntity<>("Login successful", HttpStatus.OK);
+	        } else {
+	            return new ResponseEntity<>("Invalid credentials", HttpStatus.UNAUTHORIZED);
+	        }
+	    }
+
+	    // Get login details by username
+	    @GetMapping("/{username}")
+	    public ResponseEntity<Login> getLoginByUsername(@PathVariable String username) {
+	        Login login = loginService.getLoginByUsername(username);
+	        if (login != null) {
+	            return new ResponseEntity<>(login, HttpStatus.OK);
+	        } else {
+	            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+	        }
+	    }
+
+	    // Update login details
+	    @PutMapping
+	    public ResponseEntity<String> updateLogin(@RequestBody Login login) {
+	        loginService.updateLogin(login);
+	        return new ResponseEntity<>("Login updated", HttpStatus.OK);
+	    }
+
+	    // Delete login user
+	    @DeleteMapping("/{username}")
+	    public ResponseEntity<String> deleteLogin(@PathVariable String username) {
+	        loginService.deleteLogin(username);
+	        return new ResponseEntity<>("Login deleted", HttpStatus.OK);
+	    }
+
+	    // Assign role to user
+	    @PutMapping("/assign-role/{username}")
+	    public ResponseEntity<String> assignRole(@PathVariable String username, @RequestBody String roleName) {
+	        loginService.assignRole(username, roleName);
+	        return new ResponseEntity<>("Role assigned", HttpStatus.OK);
+	    }
+	}
+}

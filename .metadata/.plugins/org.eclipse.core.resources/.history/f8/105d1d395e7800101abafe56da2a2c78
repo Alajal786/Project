@@ -1,0 +1,5 @@
+package com.sutherland.adahar.dto;
+
+public class CreditScore {
+
+}

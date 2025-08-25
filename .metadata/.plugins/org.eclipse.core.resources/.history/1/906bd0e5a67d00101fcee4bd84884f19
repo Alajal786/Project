@@ -1,0 +1,56 @@
+package com.sutherland.library.service;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.sutherland.library.entity.Book;
+import com.sutherland.library.exceptions.BookIdAlreadyExistsException;
+import com.sutherland.library.repo.BookRepository;
+
+@Service
+public class BookServiceImpl implements BookService{
+	@Autowired
+	BookRepository repo;
+	@Override
+	public void addBook(Book book) {
+		Optional<Book> bk = repo.findById(book.getBookId());
+		if(!bk.isEmpty())
+			throw new BookIdAlreadyExistsException("id already available");
+		System.out.println("book id not available");  
+		repo.save(book);		
+	}
+	@Override
+	public List<Book> getAllBooks() {
+		return repo.findAll();
+	}
+	@Override
+	public Book getBookById(int bookId) { 
+		//Optional<Book> book = repo.findById(bookId);
+		Book book = repo.getBookById(bookId);
+		return book;  // book.get();
+	}
+	@Override
+	public void updateBook(Book book) {
+		repo.save(book);	
+	}
+	@Override
+	public void deleteBook(int bookId) {
+		repo.deleteById(bookId);  		
+	}
+	
+	@Override
+	public List<Book> getBooksByAuthor(String author){
+		List<Book> bookList = repo.findByAuthor(author);
+		return bookList;
+	}
+
+	@Override
+	public List<Book> getBooksByTitleLike(String title){
+		List<Book> list = repo.findByTitleLike("%"+title+"%");
+		return list;
+	}
+
+}

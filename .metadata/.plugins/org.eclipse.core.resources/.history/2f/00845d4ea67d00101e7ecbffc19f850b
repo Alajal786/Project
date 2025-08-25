@@ -1,0 +1,58 @@
+package com.sutherland.library.service;
+
+
+	
+	
+	
+	//package com.sutherland.library.service;
+
+	import org.springframework.beans.factory.annotation.Autowired;
+	import org.springframework.stereotype.Service;
+
+	import com.sutherland.library.entity.Login;
+	import com.sutherland.library.repository.LoginRepository;
+
+	@Service
+	public class LoginServiceImpl implements LoginService {
+
+	    @Autowired
+	    private LoginRepository loginRepository;
+
+	    @Override
+	    public void addLogin(Login login) {
+	        loginRepository.save(login);
+	    }
+
+	    @Override
+	    public boolean validateLogin(String username, String password) {
+	        Login login = loginRepository.findByUsername(username);
+	        return login != null && login.getPassword().equals(password);
+	    }
+
+	    @Override
+	    public Login getLoginByUsername(String username) {
+	        return loginRepository.findByUsername(username);
+	    }
+
+	    @Override
+	    public void updateLogin(Login login) {
+	        loginRepository.save(login);
+	    }
+
+	    @Override
+	    public void deleteLogin(String username) {
+	        Login login = loginRepository.findByUsername(username);
+	        if (login != null) {
+	            loginRepository.delete(login);
+	        }
+	    }
+
+	    @Override
+	    public void assignRole(String username, String roleName) {
+	        Login login = loginRepository.findByUsername(username);
+	        if (login != null) {
+	            login.setRole(roleName);
+	            loginRepository.save(login);
+	        }
+	    }
+	}

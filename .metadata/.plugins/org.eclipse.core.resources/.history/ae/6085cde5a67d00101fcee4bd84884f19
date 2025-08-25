@@ -1,0 +1,7 @@
+package com.sutherland.library.exceptions;
+
+public class BookIdAlreadyExistsException extends RuntimeException{
+	public BookIdAlreadyExistsException(String mesg) {
+		super(mesg);
+	}
+}

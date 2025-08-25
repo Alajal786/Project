@@ -1,0 +1,72 @@
+package com.sutherland.library.entity;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Transient;
+
+@Entity
+
+public class Login {
+	
+	@Column(length = 70)
+	private String username;
+	
+	@Column(length =80)
+	private String password;
+	
+	@Transient // Not persisted in DB; Role logic is handled separately
+    private Role role;
+
+	public String getUsername() {
+		return username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	public Role getRole() {
+		return role;
+	}
+
+	public void setRole(Role role) {
+		this.role = role;
+	}
+
+
+
+public static class Role {
+    private String roleName;
+
+    public Role(String roleName) {
+        this.roleName = roleName;
+    }
+
+    public String getRoleName() {
+        return roleName;
+    }
+
+    public void setRoleName(String roleName) {
+        this.roleName = roleName;
+    }
+
+    // Function to simulate adding a user
+    public void addUser(String username) {
+        System.out.println("User '" + username + "' added by role: " + roleName);
+    }
+
+    // Function to validate login credentials
+    public boolean loginValidate(String username, String password, Login login) {
+        return login.getUsername().equals(username) && login.getPassword().equals(password);
+    }
+}
+}
+

@@ -1,0 +1,24 @@
+package com.sutherland.library.service;
+
+import com.sutherland.library.entity.Login;
+
+public interface LoginService {
+	    
+	    void addLogin(Login login);
+
+	    
+	    boolean validateLogin(String username, String password);
+
+	    
+	    Login getLoginByUsername(String username);
+
+	   
+	    void updateLogin(Login login);
+
+	    
+	    void deleteLogin(String username);
+
+	    void assignRole(String username, String roleName);
+	}
+
+

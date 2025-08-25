@@ -1,0 +1,29 @@
+package com.sutherland.library.entity;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+
+@Entity
+public class Login {
+
+    @Id
+    @Column(length = 70, nullable = false, unique = true)
+    private String username;
+
+    @Column(length = 80, nullable = false)
+    private String password;
+
+  @Column
+  private String role;
+
+public String getUsername() {
+	// TODO Auto-generated method stub
+	return null;
+}
+
+public String getPassword() {
+	// TODO Auto-generated method stub
+	return null;
+}
+}

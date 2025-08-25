@@ -1,0 +1,5 @@
+package com.sutherland.adahar.repo;
+
+public interface CreditScoreServiceProxy {
+
+}

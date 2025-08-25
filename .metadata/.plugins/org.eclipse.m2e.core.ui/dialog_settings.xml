@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="MavenProjectWizardLocationPage">
+		<list key="location">
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+	</section>
+	<section name="MavenProjectWizardArchetypePage">
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+	</section>
+	<section name="Maven2ProjectWizardArchifactPage">
+		<list key="package">
+		</list>
+		<list key="groupId">
+		</list>
+		<list key="artifactId">
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+		<list key="version">
+			<item value="0.0.1-SNAPSHOT"/>
+		</list>
+	</section>
+	<section name="MavenProjectWizardArtifactPage">
+		<list key="groupId">
+			<item value="adahar-service"/>
+			<item value="com.sutherland.adahar"/>
+			<item value="com.sutherland"/>
+		</list>
+		<list key="name">
+		</list>
+		<list key="artifactId">
+			<item value="adaharservice"/>
+			<item value="adahardetails"/>
+			<item value="springbootproject"/>
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+		<list key="version">
+			<item value="0.0.1-SNAPSHOT"/>
+		</list>
+	</section>
+	<section name="org.eclipse.m2e.core.pom.overview">
+	</section>
+	<section name="org.eclipse.m2e.core.pom.dependencies">
+	</section>
+	<section name="MavenProjectImportWizardPage">
+		<list key="rootDirectory">
+			<item value="C:\Users\user\Downloads\sutherland-loan-service"/>
+			<item value="C:\Users\user\Downloads\sutherland-config-server-client\sutherland-config-server-client"/>
+			<item value="C:\Users\user\Downloads\sutherland-config-server"/>
+			<item value="C:\Users\user\Downloads\sutherland-gateway-service\sutherland-gateway-service"/>
+			<item value="C:\Users\user\Downloads\OneDrive_2025-08-13 (2)\creditscore-service (2)"/>
+			<item value="C:\Users\user\Downloads\OneDrive_2025-08-13 (1)\loan-service (1)"/>
+			<item value="C:\Users\user\Downloads\sutherland-eureka-server"/>
+			<item value="C:\Users\user\Downloads\loan-service\loan-service"/>
+			<item value="C:\Users\user\Downloads\creditscore-service\creditscore-service"/>
+			<item value="C:\Users\user\Downloads\sutherland-library-app (2)"/>
+			<item value="C:\Users\user\Downloads\sutherland-library-app (2)\sutherland-library-apps(2)"/>
+			<item value="C:\Users\user\Downloads\sutherland-library-app (1)"/>
+			<item value="C:\Users\user\Downloads\sutherland-library-app (1)\sutherland-library-app"/>
+			<item value="C:\Users\user\Downloads\sutherland-library-app"/>
+			<item value="C:\Users\user\Downloads\sutherland.library.app\sutherland.library.app"/>
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+	</section>
+	<section name="MavenCheckoutLocationPage">
+		<list key="scmUrl">
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+	</section>
+</section>
